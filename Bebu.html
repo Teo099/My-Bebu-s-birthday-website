@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="BEBUUU style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto; /* Allow height to adjust with content */
+            margin: 0;
+            text-align: center;
+            padding: 20px; /* Add some padding */
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Arial', sans-serif;
+            font-size: 2em;
+            color: #ff4081;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            height: 200px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-placeholder {
+            margin-left: 20px;
+            max-width: 250px;
+        }
+
+        #birthday-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 20px;
+        }
+
+        .content-section img {
+            max-width: 100%; /* Make images responsive without stretching */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 200px; /* Limit the height */
+            margin: 10px 0; /* Space between images vertically */
+            display: block; /* Display images in a block format */
+        }
+
+        button {
+            margin-top: 20px; /* Space above buttons */
+        }
+
+        /* Video section styles */
+        #video-content {
+            display: none;
+            margin-top: 20px;
+        }
+
+        video {
+            max-width: 100%; /* Responsive video */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💜💜 Happy Birthday, My Bebu! 💜💜</h1>
+        <div class="image-placeholder">
+            <img id="birthday-image" src="New folder/Background.jpg" alt="Happy Birthday" />
+        </div>
+    </header>
+
+    <button id="enter-button" onclick="showMainContent()">Please Enter</button>
+
+    <main id="main-content" style="display:none;">
+        <h2>My cute bebu!</h2>
+        <nav>
+            <button onclick="showSection('message')">Message</button>
+            <button onclick="showSection('pictures')">Pictures</button>
+            <button onclick="showSection('videos')">Videos</button>
+        </nav>
+        
+        <div id="content">
+            <div id="message" class="content-section" style="display:none;">
+                <h3>Your Message</h3>
+                <p>Hi my bebu, my baby love, my lovey love, my wifeyy! I LOVE YOU SO MUCHHH! Happiest 22nd birthday to you, my forever love! Even though I’m not there beside you, I’m sending you the BIGGEST virtual hug and kiss ever! 🤗 You deserve all the happiness in the world, and I hope you’re feeling it all today. 💜
+
+                    Thank you for always being my partner, my cute and pretty bebu who's silly, sweet, and a little scary sometimes, but always PERFECT for me! I’m sooo grateful for you every single day! Even if we’re not together right now, I want you to know that my love for you is as big as the universe and beyond! 💜
+                    
+                    I can't wait to be with you again, but for now, pleaseee enjoy your special day to the fullest! And yes, this website is specially made just for YOU!
+                    
+                    I love love love love youuuuu sooooo muchh my BEBUUUUUUU!!! 🤗💜</p>
+            </div>
+            <div id="pictures" class="content-section" style="display:none;">
+                <h3>Pictures</h3>
+                <img src="New folder/birthday.jpeg" alt="Happy Birthday" />
+                <img src="New folder/birthday1.jpeg" alt="Happy Birthday" />
+                <img src="New folder/birthday3.jpg" alt="Happy Birthday" />
+                <img src="New folder/birthday4.jpg" alt="Happy Birthday" />
+                <img src="New folder/birthday5.jpg" alt="Happy Birthday" />
+                <img src="New folder/birthday6.jpg" alt="Happy Birthday" />
+                <img src="New folder/birthday7.jpg" alt="Happy Birthday" />
+                <img src="New folder/birthday8.jpg" alt="Happy Birthday" />
+                <img src="New folder/birthday9.jpg" alt="Happy Birthday" />
+                <img src="New folder/birthday10.jpg" alt="Happy Birthday" />
+                <img src="New folder/birthday11.jpg" alt="Happy Birthday" />
+                <img src="New folder/birthday12.jpg" alt="Happy Birthday" />
+                <img src="New folder/birthday13.jpg" alt="Happy Birthday" />
+                <img src="New folder/birthday14.jpg" alt="Happy Birthday" />
+                <img src="New folder/birthday15.jpg" alt="Happy Birthday" />
+            </div>
+            <div id="videos" class="content-section" style="display:none;">
+                <h3>Videos</h3>
+                <div id="video-buttons">
+                    <button onclick="showVideo('v1')">Video 1</button>
+                    <button onclick="showVideo('v2')">Video 2</button>
+                    <button onclick="showVideo('v3')">Video 3</button>
+                    <button onclick="showVideo('v4')">Video 4</button>
+                    <button onclick="showVideo('v5')">Video 5</button>
+                    <button onclick="showVideo('v6')">Video 6</button>
+                    <button onclick="showVideo('v7')">Video 7</button>
+                    <button onclick="showVideo('v8')">Video 8</button>
+                    <button onclick="showVideo('v9')">Video 9</button>
+                    <button onclick="showVideo('v10')">Video 10</button>
+                </div>
+                <div id="video-content">
+                    <video id="video-player" controls>
+                        <source id="video-source" src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <button id="back-button" onclick="goBack()" style="display:none; margin-top: 20px;">Back</button>
+        <button id="home-button" onclick="goHome()" style="margin-top: 20px;">Home</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Birthday Celebration</p>
+    </footer>
+
+    <script src="Bebuu script.js"></script>
+    <script>
+        function showMainContent() {
+            document.getElementById('main-content').style.display = 'block';
+            document.getElementById('enter-button').style.display = 'none';
+        }
+
+        function goHome() {
+            location.reload(); 
+        }
+
+        function showVideo(videoType) {
+            const videoPlayer = document.getElementById('video-player');
+            const videoSource = document.getElementById('video-source');
+            let videoPath = '';
+
+            // Update paths to include 'New folder'
+            switch (videoType) {
+                case 'v1':
+                    videoPath = 'New folder/v1.mp4';
+                    break;
+                case 'v2':
+                    videoPath = 'New folder/v2.mp4';
+                    break;
+                case 'v3':
+                    videoPath = 'New folder/v3.mp4';
+                    break;
+                case 'v4':
+                    videoPath = 'New folder/v4.mp4';
+                    break;
+                case 'v5':
+                    videoPath = 'New folder/v5.mp4';
+                    break;
+                case 'v6':
+                    videoPath = 'New folder/v6.mp4';
+                    break;
+                case 'v7':
+                    videoPath = 'New folder/v7.mp4';
+                    break;
+                case 'v8':
+                    videoPath = 'New folder/v8.mp4';
+                    break;
+                case 'v9':
+                    videoPath = 'New folder/v9.mp4';
+                    break;
+                case 'v10':
+                    videoPath = 'New folder/v10.mp4';
+                    break;
+            }
+
+            videoSource.src = videoPath;
+            videoPlayer.load();
+            videoPlayer.play();
+            document.getElementById('video-content').style.display = 'block'; // Show video player
+        }
+    </script>
+</body>
+</html>
